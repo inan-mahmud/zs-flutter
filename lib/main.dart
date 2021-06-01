@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:zstask/bindings/connection_binding.dart';
+import 'package:zstask/constants/app_constants.dart';
+import 'package:zstask/constants/app_theme.dart';
+import 'package:zstask/controllers/authentication_controller.dart';
 import 'package:zstask/controllers/connection_controller.dart';
 import 'package:zstask/routes/app_pages.dart';
 import 'package:zstask/routes/routes.dart';
@@ -9,24 +11,20 @@ import 'package:zstask/routes/routes.dart';
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
   Get.put(ConnectionController());
-  runApp(
-    GetMaterialApp(
-      title: 'Zs-Flutter',
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return GetMaterialApp(
+      title: Constants.APPNAME,
       debugShowCheckedModeBanner: false,
-      defaultTransition: Transition.native,
+      defaultTransition: Transition.rightToLeft,
       initialBinding: ConnectionBinding(),
       getPages: AppPages.pages,
-      initialRoute: Routes.MENU,
-      theme: ThemeData(
-        primarySwatch: Colors.green,
-        appBarTheme: AppBarTheme(
-          color: Colors.green.shade700,
-          textTheme: TextTheme(
-            headline6: GoogleFonts.roboto(
-                color: Colors.white, fontSize: 16, fontWeight: FontWeight.bold),
-          ),
-        ),
-      ),
-    ),
-  );
+      initialRoute: Routes.INITIAL,
+      theme: AppThemes.appTheme,
+    );
+  }
 }

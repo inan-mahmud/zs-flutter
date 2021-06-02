@@ -2,7 +2,7 @@
     package="com.example.zstask">
     <uses-permission android:name="android.permission.INTERNET" />
    <application
-        android:label="ZS-Flutter"
+        android:label="ZSS-Flutter"
         android:icon="@mipmap/ic_launcher">
         <activity
             android:name=".MainActivity"

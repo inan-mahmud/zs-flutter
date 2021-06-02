@@ -5,7 +5,6 @@ import 'package:zstask/controllers/connection_controller.dart';
 import 'package:zstask/data/models/login_model.dart';
 import 'package:zstask/data/repositories/login_repository.dart';
 import 'package:zstask/routes/routes.dart';
-import 'package:zstask/utils/enums/app_state.dart';
 import 'package:zstask/utils/helpers/failure.dart';
 import 'package:zstask/utils/helpers/snackbars.dart';
 import 'package:zstask/utils/helpers/validators.dart';
@@ -50,6 +49,13 @@ class AuthenticationController extends GetxController {
     loadToken();
   }
 
+  @override
+  void onClose() {
+    emailController.dispose();
+    passwordController.dispose();
+    super.onClose();
+  }
+
   login() async {
     if (ConnectionController.to.connectionStatus.value > 0) {
       inAsyncCall = true;
@@ -64,6 +70,7 @@ class AuthenticationController extends GetxController {
         LoginModel model = await _loginRepository.signIn(data);
         saveToken(model.access);
         inAsyncCall = false;
+        clearControllers();
       } on Failure catch (e) {
         inAsyncCall = false;
         showErrorSnackBar(e.message);
@@ -92,5 +99,10 @@ class AuthenticationController extends GetxController {
     if (isLogout) {
       Get.offAllNamed(Routes.LOGIN);
     }
+  }
+
+  void clearControllers() {
+    emailController.clear();
+    passwordController.clear();
   }
 }

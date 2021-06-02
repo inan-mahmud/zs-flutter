@@ -34,11 +34,11 @@ class LoginScreen extends GetView<AuthenticationController> {
                         children: [
                           SizedBox(height: height * .3),
                           Text(
-                            "ZS-Flutter",
+                            Constants.APPNAME,
                             style: Theme.of(context).textTheme.headline1,
                           ),
                           SizedBox(height: 50),
-                          _emailPasswordWidget(),
+                          _emailPasswordWidget(context),
                           SizedBox(height: 20),
                           Container(
                             width: MediaQuery.of(context).size.width,
@@ -67,29 +67,30 @@ class LoginScreen extends GetView<AuthenticationController> {
     });
   }
 
-  Widget _emailPasswordWidget() {
+  Widget _emailPasswordWidget(BuildContext context) {
     return Column(
       children: <Widget>[
-        _emailField(Constants.EMAIL),
-        _entryPasswordField(Constants.Password),
+        _emailField(context),
+        _entryPasswordField(context),
       ],
     );
   }
 
-  Widget _emailField(String title) {
+  Widget _emailField(BuildContext context) {
     return Container(
       margin: EdgeInsets.symmetric(vertical: 10),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
           Text(
-            title,
+            Constants.EMAIL,
             style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
           ),
           SizedBox(
             height: 10,
           ),
           TextFormField(
+            autofocus: true,
             controller: controller.emailController,
             keyboardType: TextInputType.emailAddress,
             validator: controller.emailValidator,
@@ -101,7 +102,8 @@ class LoginScreen extends GetView<AuthenticationController> {
                   borderSide: BorderSide(color: Colors.grey, width: .5),
                 ),
                 fillColor: Colors.grey[50],
-                hintText: Constants.EMAIL,
+                hintText: Constants.EMAIL_HINT,
+                hintStyle: Theme.of(context).textTheme.caption,
                 filled: true),
           ),
         ],
@@ -109,14 +111,14 @@ class LoginScreen extends GetView<AuthenticationController> {
     );
   }
 
-  Widget _entryPasswordField(String title) {
+  Widget _entryPasswordField(BuildContext context) {
     return Container(
       margin: EdgeInsets.symmetric(vertical: 10),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
           Text(
-            title,
+            Constants.Password,
             style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
           ),
           SizedBox(
@@ -134,7 +136,8 @@ class LoginScreen extends GetView<AuthenticationController> {
                   borderSide: BorderSide(color: Colors.grey, width: .5),
                 ),
                 fillColor: Colors.grey[50],
-                hintText: Constants.Password,
+                hintText: Constants.Password_HINT,
+                hintStyle: Theme.of(context).textTheme.caption,
                 filled: true),
           )
         ],

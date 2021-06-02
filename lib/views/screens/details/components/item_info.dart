@@ -120,7 +120,7 @@ ClipPath priceTag(BuildContext context, {String price}) {
       alignment: Alignment.center,
       height: 66,
       width: 65,
-      color: Theme.of(context).primaryColorLight,
+      color: Theme.of(context).primaryColor,
       child: Text(
         "\$$price",
         style: Theme.of(context).textTheme.subtitle2,

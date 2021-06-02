@@ -24,9 +24,9 @@ class ConnectionController extends GetxController {
 
   navigateToMenuScreen() {
     if (AuthenticationController.to.token != null) {
-      Get.offAndToNamed(Routes.MENU);
+      Get.offAllNamed(Routes.MENU);
     } else {
-      Get.toNamed(Routes.LOGIN);
+      Get.offAllNamed(Routes.LOGIN);
     }
   }
 

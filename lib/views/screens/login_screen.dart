@@ -44,7 +44,7 @@ class LoginScreen extends GetView<AuthenticationController> {
                             width: MediaQuery.of(context).size.width,
                             child: ElevatedButton(
                                 style: ElevatedButton.styleFrom(
-                                  primary: Theme.of(context).primaryColorDark,
+                                  primary: Theme.of(context).primaryColor,
                                 ),
                                 onPressed: () {
                                   if (controller.formKey.currentState

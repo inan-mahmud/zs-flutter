@@ -4,6 +4,8 @@ abstract class LocalStorage {
   Future<bool> write(String key, String value);
 
   Future<String> read(String key);
+
+  Future<bool> remove(String key);
 }
 
 class LocalStorageImpl implements LocalStorage {
@@ -19,5 +21,11 @@ class LocalStorageImpl implements LocalStorage {
     SharedPreferences preferences = await SharedPreferences.getInstance();
     String value = preferences.getString(key);
     return value;
+  }
+
+  @override
+  Future<bool> remove(String key) async {
+    SharedPreferences pref = await SharedPreferences.getInstance();
+    return pref.remove(key);
   }
 }

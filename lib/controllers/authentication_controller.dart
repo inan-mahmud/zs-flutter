@@ -34,13 +34,9 @@ class AuthenticationController extends GetxController {
 
   final formKey = GlobalKey<FormState>();
 
-  final isLogged = false.obs;
-
   final _inAsyncCall = false.obs;
 
   get inAsyncCall => _inAsyncCall;
-
-  final appState = Rx<AppState>(AppState.IDLE);
 
   static AuthenticationController to = Get.find();
 
@@ -57,7 +53,6 @@ class AuthenticationController extends GetxController {
   login() async {
     if (ConnectionController.to.connectionStatus.value > 0) {
       inAsyncCall = true;
-      appState.value = AppState.LOADING;
 
       var data = {
         "email": emailController.text.trim(),
@@ -69,10 +64,8 @@ class AuthenticationController extends GetxController {
         LoginModel model = await _loginRepository.signIn(data);
         saveToken(model.access);
         inAsyncCall = false;
-        appState.value = AppState.DONE;
       } on Failure catch (e) {
         inAsyncCall = false;
-        appState.value = AppState.ERROR;
         showErrorSnackBar(e.message);
       }
     }
@@ -80,7 +73,6 @@ class AuthenticationController extends GetxController {
 
   loadToken() async {
     token = await _localStorage.read(Constants.TOKEN);
-    token != null ? isLogged.value = true : isLogged.value = false;
   }
 
   void saveToken(String token) async {
@@ -93,5 +85,12 @@ class AuthenticationController extends GetxController {
 
   void navigateToMenuScreen() {
     Get.offAllNamed(Routes.MENU);
+  }
+
+  void signOut() async {
+    bool isLogout = await _localStorage.remove(Constants.TOKEN);
+    if (isLogout) {
+      Get.offAllNamed(Routes.LOGIN);
+    }
   }
 }

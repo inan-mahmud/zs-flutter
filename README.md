@@ -38,6 +38,23 @@ flutter run
 * [Shimmer](https://pub.dev/packages/shimmer)
 * [Google Fonts](https://pub.dev/packages/google_fonts)
 
+### With above tools and libraries the pubspec.yaml will look like below:
+
+```
+dependencies:
+  flutter:
+    sdk: flutter
+    
+  get: ^4.1.4
+  dio: ^4.0.0
+  connectivity: ^3.0.6
+  google_fonts: ^2.1.0
+  shared_preferences: ^2.0.6
+  shimmer: ^2.0.0
+  cached_network_image: ^3.0.0
+  
+```
+
 ### Folder Structure
 Here is the core folder structure which flutter provides.
 

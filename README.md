@@ -142,3 +142,58 @@ data/
     |- menu_repository.dart
     
 ```
+
+### Routes
+
+This file contains the route management for this application.
+
+```
+routes/
+|- app_pages.dart
+|- routes.dart
+
+```
+
+### Utils
+
+Contains the common files and utilities used in a project. The folder structure is as follows: 
+
+```
+utils/
+|- enums
+   |- app_state.dart
+|- helpers
+  |- failure.dart
+  |- snackbars.dart
+  |- validators.dart
+|- response
+  |- api_response.dart
+|- services
+  |- local_storage.dart
+```
+
+### Views
+
+This directory contains all the ui of the application. Screens are located into sub directory named `screens` and widgets are located into sub directory named `widgets`. The screen which has its specific widget are placed into another sub directory and the widget specific to that screen are placed into the `components` directory under that sub directory.
+```
+views/
+|- screens
+  |- details
+    |- components
+        |- item_image.dart
+        |- item_info.dart
+        |- price_clipper.dart
+    |- details_screen.dart
+  |- login_screen.dart
+  |- menu_screen.dart
+  |- splash_screen.dart
+|- widgets
+  |- bezier_curve
+      |- bezier_container.dart
+      |- customer_clipper.dart
+  |- error_widet.dart
+  |- modal_progress.dart
+  |- shimmer_widget.dart
+
+   
+```

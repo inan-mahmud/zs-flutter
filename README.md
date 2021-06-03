@@ -1,6 +1,10 @@
 # zs-flutter
 
-zs-flutter is a demo project where a user can gets to see a list of food menus and see details for a specific food. The project is created on Flutter and it uses Getx.
+zs-flutter is a demo project where a user can gets to see a list of food menus and see details for a specific food. The project is created on Flutter and it uses Getx for three major parts.
+
+* State Management
+* Dependency Injection
+* Route Management
 
 ### Step 1
 Create a folder on your machine and clone the repo using the following command

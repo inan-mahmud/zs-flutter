@@ -94,3 +94,13 @@ Now, lets dive into the lib folder which has the main code for the application.
 7- views — Contains all the ui of this project, contains app pages and widgets.
 8- main.dart - This is the starting point of the application. All the application level configurations are defined in this file i.e, theme, routes, title etc.
 ```
+### Bindings
+
+This directory contains all the classes for dependency injection. A separate file is created for each type as shown in example below:
+
+```
+bindings/
+|- authentication_binding.dart
+|- connection_binding.dart
+|- menu_binding.dart
+```

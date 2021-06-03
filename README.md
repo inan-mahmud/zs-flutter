@@ -6,7 +6,7 @@ zs-flutter is a demo project where a user can gets to see a list of food menus a
 Create a folder on your machine and clone the repo using the following command through command prompt/git bash/console
 
 ```
-$ git clone https://github.com/inanmahmud92/zs-flutter.git
+git clone https://github.com/inanmahmud92/zs-flutter.git
 
 ```
 

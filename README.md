@@ -63,3 +63,17 @@ lib/
 |- views/
 |- main.dart
 ```
+
+Now, lets dive into the lib folder which has the main code for the application.
+
+
+```
+1- bindings - All the dependencies injected in this project are defined in this directory with their respected files.
+2- constants - All the application level constants are defined in this directory with-in their respective files. This directory contains the constants for `theme`, `urls`,`strings`.
+3- controllers - Contains all the controllers for this project which communicate with the ui and repositories.
+4- data — Contains the data layer for this project, having 2 sub directories which contains the model classes and repositories.
+5- routes — Contains the routes with route management of the app.
+6- utils — Contains the utilities/common functions, having sub directories for enums, helper classes, base response and services.
+7- views — Contains all the ui of this project, contains app pages and widgets.
+8- main.dart - This is the starting point of the application. All the application level configurations are defined in this file i.e, theme, routes, title etc.
+```

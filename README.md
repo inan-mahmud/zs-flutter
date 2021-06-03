@@ -36,3 +36,30 @@ flutter run
 * [SharedPreference](https://pub.dev/packages/shared_preferences)
 * [CachedNetworkImage](https://pub.dev/packages/cached_network_image)
 * [Shimmer](https://pub.dev/packages/shimmer)
+* [Google Fonts](https://pub.dev/packages/google_fonts)
+
+### Folder Structure
+Here is the core folder structure which flutter provides.
+
+```
+flutter-app/
+|- android
+|- build
+|- ios
+|- lib
+|- test
+```
+
+Here is the folder structure I have been using in this project
+
+```
+lib/
+|- bindings/
+|- constants/
+|- controllers/
+|- data/
+|- routes/
+|- utils/
+|- views/
+|- main.dart
+```

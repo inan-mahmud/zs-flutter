@@ -28,3 +28,11 @@ flutter run
 
 ``` 
 
+### Libraries & Tools Used
+
+* [Dio](https://pub.dev/packages/dio)
+* [GetX](https://pub.dev/packages/get)
+* [Connectivity](https://pub.dev/packages/connectivity)
+* [SharedPreference](https://pub.dev/packages/shared_preferences)
+* [CachedNetworkImage](https://pub.dev/packages/cached_network_image)
+* [Shimmer](https://pub.dev/packages/shimmer)

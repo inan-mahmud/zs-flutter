@@ -1,6 +1,6 @@
 # zs-flutter
 
-zs-flutter is a demo food app, made with made with [Getx](https://pub.dev/packages/get) and Flutter sdk. 
+zs-flutter is a demo food app, made with [Getx](https://pub.dev/packages/get) and Flutter sdk. 
 
 The main goal is to build a readable, maintainable, scalable and high-quality flutter app using a nice clean architecture.
 

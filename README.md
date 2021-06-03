@@ -118,11 +118,27 @@ constants/
 
 ### Controllers
 
-This directory contains all the controllers. Controllers are responsible for update the ui and calling repositories. A separate file is created for each type as shown in example below:
+This directory contains all the controllers. The communication between UI and data layer is handled by using controllers. A separate file is created for each type as shown in example below:
 
 ```
 controllers/
 |- authentication_controller.dart
 |- connection_controller.dart
 |- menu_controller.dart
+```
+
+### Data
+
+All the business logic of this application are into this directory, it represents the data layer of the project. It is sub-divided into two directories `models` and `repositories`. First one contains all the model classes where the other contains the domain specific logic.
+
+```
+data/
+|- models/
+    |- menus/
+    |- login_model.dart
+       
+|- repositories
+    |- login_repository.dart
+    |- menu_repository.dart
+    
 ```

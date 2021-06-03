@@ -104,3 +104,25 @@ bindings/
 |- connection_binding.dart
 |- menu_binding.dart
 ```
+
+### Constants
+
+This directory contains all the application level constants. A separate file is created for each type as shown in example below:
+
+```
+constants/
+|- app_constants.dart
+|- app_theme.dart
+|- urls.dart
+```
+
+### Controllers
+
+This directory contains all the controllers. Controllers are responsible for update the ui and calling repositories. A separate file is created for each type as shown in example below:
+
+```
+controllers/
+|- authentication_controller.dart
+|- connection_controller.dart
+|- menu_controller.dart
+```
